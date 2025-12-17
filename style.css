@@ -1,0 +1,121 @@
+:root {
+    --bg: #05070a;
+    --accent: #00f2ff;
+    --field-line: #1e40af;
+    --card-bg: rgba(20, 25, 35, 0.95);
+    --muted: #94a3b8;
+    --color-POR: #ffde59; --color-DEF: #2ed573; --color-MC: #00f2ff;
+    --color-MCO: #a55eea; --color-EXT: #fa8231; --color-DEL: #ff4757;
+}
+
+body { 
+    margin: 0; 
+    font-family: 'Inter', sans-serif; 
+    background: var(--bg); 
+    color: white; 
+    overflow-x: hidden; 
+}
+
+header {
+    backdrop-filter: blur(20px); background: rgba(0,0,0,0.8);
+    padding: 1rem 5%; display: flex; justify-content: space-between;
+    align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 1000;
+}
+
+.logo { cursor: pointer; font-weight: 900; font-size: 1.2rem; white-space: nowrap; }
+
+nav { display: flex; gap: 5px; overflow-x: auto; padding-bottom: 5px; }
+
+.nav-btn {
+    background: transparent; border: none; color: var(--muted);
+    padding: 8px 12px; border-radius: 8px; cursor: pointer; 
+    font-weight: 600; transition: 0.3s; white-space: nowrap; font-size: 0.85rem;
+}
+.nav-btn.active { color: var(--accent); background: rgba(0, 242, 255, 0.1); }
+
+/* Contenedores y Grillas */
+.home-container { padding: 1rem 5%; max-width: 1200px; margin: 0 auto; }
+.cards-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 15px; 
+    padding: 1rem 5%; 
+}
+
+/* Cards de Jugadores */
+.player-card {
+    background: var(--card-bg); border-radius: 20px; padding: 15px;
+    border-top: 4px solid var(--muted);
+}
+.border-POR { border-top-color: var(--color-POR); }
+.border-DEF { border-top-color: var(--color-DEF); }
+.border-MC { border-top-color: var(--color-MC); }
+.border-MCO { border-top-color: var(--color-MCO); }
+.border-EXT { border-top-color: var(--color-EXT); }
+.border-DEL { border-top-color: var(--color-DEL); }
+
+.player-photo { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
+
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 15px; }
+.stat-box { background: rgba(0,0,0,0.3); padding: 6px; border-radius: 10px; text-align: center; }
+.stat-val { display: block; font-weight: 900; color: var(--accent); font-size: 1rem; }
+.stat-lab { font-size: 0.55rem; color: var(--muted); text-transform: uppercase; }
+
+/* Home y Hero */
+.hero { text-align: center; padding: 2rem 1rem; }
+.hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.quick-stats { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+.q-box span { font-size: 1.5rem; font-weight: 900; color: var(--accent); }
+.q-box label { display: block; font-size: 0.7rem; color: var(--muted); }
+
+.home-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.home-card { background: var(--card-bg); padding: 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+
+/* Cancha Responsive */
+.pitch {
+    position: relative; 
+    width: 95%; 
+    aspect-ratio: 2 / 3; /* Mantiene la proporción siempre */
+    max-width: 450px; 
+    margin: 20px auto; 
+    background: #0a0f1e; 
+    border: 3px solid var(--field-line);
+    border-radius: 20px; 
+}
+.pitch-line-center { position: absolute; top: 50%; width: 100%; height: 2px; background: var(--field-line); }
+.pitch-circle {
+    position: absolute; top: 50%; left: 50%; width: 20%; height: 13%;
+    border: 2px solid var(--field-line); border-radius: 50%; transform: translate(-50%, -50%);
+}
+
+.tactical-card {
+    position: absolute; width: 18%; background: rgba(10, 15, 30, 0.95);
+    border: 1px solid var(--accent); border-radius: 8px; padding: 4px; text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.tactical-card .rating { font-size: 0.8rem; font-weight: 900; color: var(--accent); }
+.tactical-card .name { font-size: 0.6rem; white-space: nowrap; overflow: hidden; }
+
+/* Partidos */
+.match-list { padding: 1rem; max-width: 800px; margin: 0 auto; }
+.match-card { background: var(--card-bg); border-radius: 15px; padding: 15px; margin-bottom: 12px; border-left: 4px solid var(--accent); }
+.match-row { display: flex; justify-content: space-between; align-items: center; gap: 5px; }
+.match-team { flex: 1; font-weight: 700; font-size: 0.9rem; }
+.match-score { background: var(--accent); color: var(--bg); padding: 4px 10px; border-radius: 6px; font-weight: 900; min-width: 50px; text-align: center; }
+
+/* --- MEDIA QUERIES PARA CELULARES --- */
+@media (max-width: 600px) {
+    header { flex-direction: column; gap: 15px; padding: 1rem; }
+    .logo { font-size: 1.5rem; }
+    nav { width: 100%; justify-content: space-between; }
+    .nav-btn { padding: 8px 10px; font-size: 0.75rem; }
+    
+    .hero h1 { font-size: 1.8rem; }
+    .quick-stats { gap: 15px; }
+    
+    .match-team { font-size: 0.8rem; }
+    .match-score { font-size: 1rem; min-width: 40px; }
+    
+    .tactical-card { width: 22%; } /* Jugadores un toque más grandes en mobile */
+}

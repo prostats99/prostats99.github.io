@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROSTATS | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="cambiarVista('home')">⚽ <span style="color:#00f2ff">PRO</span>STATS</div>
+        <nav>
+            <button onclick="cambiarVista('jugadores')" class="nav-btn">👤 Jugadores</button>
+            <button onclick="cambiarVista('dreamteam')" class="nav-btn">⭐ Dream Team</button>
+            <button onclick="cambiarVista('equipos')" class="nav-btn">🏟️ Equipos</button>
+            <button onclick="cambiarVista('partidos')" class="nav-btn">📅 Resultados</button>
+        </nav>
+    </header>
+    <main id="contenido"></main>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
