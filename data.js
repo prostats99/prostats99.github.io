@@ -59,9 +59,9 @@ const data = {
           piernaHabil: "Derecha",
           piernaMala: "2",
           golesTotales: 1, 
-          asistenciasTotales: 0,
+          asistenciasTotales: 1,
           vallasInvictasTotales: 0,
-          semana: { goles: 1, asistencias: 0, vallaInvicta: false, jugo: true },
+          semana: { goles: 1, asistencias: 1, vallaInvicta: false, jugo: true },
           stats: { velocidad: 76, aceleracion: 75, tiro: 73, tecnica: 76, regates: 76, potencia: 69, resistencia: 72, defensa: 85 }
         },
         { 
@@ -134,3 +134,4 @@ const data = {
     { local: "VillaCanto FC", visitante: "SC VillaRiccio", scoreL: 19, scoreV: 18, fecha: "26 de Diciembre" },
   ]
 };
+
